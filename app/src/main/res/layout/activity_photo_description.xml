@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+                name="photo"
+                type="com.example.cuisine.domain.Cuisine"/>
+    </data>
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+                                           android:layout_height="wrap_content"
+                                           android:fillViewport="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:id="@+id/linearLayout2">
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/titleText"
+                    app:text="@{photo.title}"
+                    android:padding="@dimen/padding_all"
+                    android:textColor="@android:color/background_dark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/image"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="@dimen/text_size_large"
+                    app:fontFamily="sans-serif-medium"
+
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+
+            <ImageView
+                    android:id="@+id/image"
+                    android:adjustViewBounds="true"
+                    app:imageUrl="@{photo}"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    app:layout_constraintDimensionRatio="@string/ratio"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleText"
+            />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/description"
+                    app:text="@{photo.description}"
+                    android:padding="@dimen/padding_all"
+                    app:fontFamily="sans-serif"
+                    android:textStyle="normal"
+                    android:textSize="@dimen/text_size_medium"
+                    android:autoLink="web"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/tag"
+                    android:padding="@dimen/padding_all"
+                    android:gravity="fill_vertical"
+                    android:id="@+id/tagText"
+                    android:visibility="gone"
+                    android:drawablePadding="@dimen/padding_all"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/description"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/chef"
+                    android:padding="@dimen/padding_all"
+                    android:visibility="gone"
+                    app:fontFamily="cursive"
+                    android:gravity="fill_vertical"
+                    android:drawablePadding="@dimen/padding_all"
+                    android:id="@+id/chef"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tagText"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>
