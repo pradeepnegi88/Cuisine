@@ -59,15 +59,5 @@ class MainActivityTest {
         pressBack()
     }
 
-//    @Test
-//    fun validateNoData() {
-//        onView(withId(R.id.progressBar)).check(matches(not(isDisplayed())))
-//        onView(withId(R.id.action_search)).perform(click())
-//        onView(isAssignableFrom(EditText::class.java)).perform(typeText("sasfasfdasdasdasdasd"), pressImeActionButton())
-//        onView(withId(R.id.gridview)).check(matches(isDisplayed()))
-//        onView(withText(R.string.no_data_available))
-//            .inRoot(withDecorView(not(intentsRule.activity.window.decorView)))
-//            .check(matches(isDisplayed()))
-//    }
 
 }
